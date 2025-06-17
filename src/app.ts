@@ -1,12 +1,19 @@
 import express, { Application } from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import userRoutes from './modules/user/user.route';
 import adminRoutes from './modules/admin/admin.route';
 
 dotenv.config();
 
 const app: Application = express();
+
+// CORS configuration
+app.use(cors({
+    origin: 'http://localhost:4200',
+    credentials: true
+}));
 
 // Middleware
 app.use(express.json());
