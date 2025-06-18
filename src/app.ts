@@ -11,7 +11,10 @@ const app: Application = express();
 
 // CORS configuration
 app.use(cors({
-    origin: 'http://localhost:4200',
+    origin: [
+        'https://angularfrontend-seven.vercel.app',   // Production frontend
+        'http://localhost:4200'                     // Local dev frontend
+    ],
     credentials: true
 }));
 
